@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- metadata tags -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>csci 1300 - responsive redesign</title>
+		<!-- import CSS styles -->
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+
+	<!-- page content goes into <body> -->
+	<body>
+		<div class="title">
+			<h1>Redesigning the Toronto Cupcake FAQs page</h1>
+			<p>
+				<i>
+					A case study on improving usability, accessibility, and
+					responsiveness.
+				</i>
+			</p>
+		</div>
+		<br />
+
+		<div id="links" class="columns quicklinks">
+			<div class="column">
+				<h3>Quick links:</h3>
+			</div>
+			<div class="column">
+				<a href="https://www.torontocupcake.com/faqs.html"
+					>Original page</a
+				>
+			</div>
+			<div class="column">
+				<a
+					href="https://catherineyu8.github.io/toronto-cupcake-redesign/"
+					>Redesigned page</a
+				>
+			</div>
+		</div>
+		<br />
+
+		<div id="identify-problems">
+			<h2>Original Design</h2>
+			<div id="pick-webpage">
+				<p>
+					Despite containing relatively simple content, the
+					<a href="https://www.torontocupcake.com/index.html"
+						>Toronto Cupcake</a
+					>
+					website is extremely frustrating to navigate through and has
+					visually inconsistent, cluttered pages. Its poor design and
+					lack of clear organization makes it difficult for users to
+					quickly find the information they need, potentially driving
+					away customers who might otherwise place an order.
+				</p>
+				<div class="columns">
+					<div class="column">
+						<img
+							src="./images/og_faq.png"
+							style="width: 800px !important"
+						/>
+					</div>
+				</div>
+
+				<p>
+					I chose to specifically redesign the
+					<a href="https://www.torontocupcake.com/faqs.html">FAQs</a>
+					page because, despite its simple and straightforward
+					purpose, its layout makes it hard for users to efficiently
+					find the information they need.
+				</p>
+			</div>
+			<br />
+			<div id="find-problems">
+				<h2>Identifying Problems</h2>
+				<p>
+					I analyzed the usability of the FAQs page according to
+					several different criteria:
+				</p>
+				<ul>
+					<li>
+						<strong style="color: #c22c5d">Efficiency</strong> - is
+						it fast to do typical tasks? (for frequent users)
+					</li>
+					<li>
+						<strong style="color: #c22c5d">Learnability</strong> -
+						is it easy to learn? (for new users)
+					</li>
+					<li>
+						<strong style="color: #c22c5d">Memorability</strong> -
+						is it easy to remember what to do? (for casual users)
+					</li>
+					<li>
+						<strong style="color: #c22c5d">Conceptual model</strong>
+						- how does the interface reveal to the user how it
+						works? (using visual/physical/audio cues)
+					</li>
+				</ul>
+				<table>
+					<col style="width: 30%" />
+					<col style="width: 24%" />
+					<col style="width: 22%" />
+					<col style="width: 24%" />
+					<tr>
+						<th>Efficiency</th>
+						<th>Learnability</th>
+						<th>Memorability</th>
+						<th>Conceptual model</th>
+					</tr>
+					<tr>
+						<td>
+							<ul>
+								<li>
+									Answers don't automatically collapse -
+									creates a cluttered page when multiple Q/A's
+									are displayed, making it harder/less
+									efficient to read through the Q/A the user
+									actually wants
+								</li>
+								<li>
+									Organization using both rows and columns
+									makes the users' visual path zig-zagged -
+									less efficient and harder to skim for the
+									Q/A they are looking for
+								</li>
+								<li>
+									Responsiveness of the nav dropdown makes it
+									hard for users to navigate to the right
+									section (expandable 'cupcakes' tab has no
+									delay when mousing-over)
+								</li>
+								<li>
+									On longer pages, nav dropdown disappears
+									from the screen and the user has to scroll
+									all the way up to access it again
+								</li>
+							</ul>
+						</td>
+						<td>
+							<ul>
+								<li>
+									FAQ buttons don't look clickable - new users
+									may not know to click on them to
+									expand/collapse the answer
+								</li>
+								<li>
+									Organization using both rows and columns
+									makes the users' visual path zig-zagged,
+									which is unintuitive when a new user is
+									trying to find a question
+								</li>
+							</ul>
+						</td>
+						<td>
+							<ul>
+								<li>
+									Once a user experiments with how to click
+									through the website the first time, it is
+									simple to remember how to navigate. However,
+									each time the user still faces the same
+									design flaws, leading to a frustrating
+									experience
+								</li>
+							</ul>
+						</td>
+						<td>
+							<ul>
+								<li>
+									Buttons don't have a clear cue signaling
+									they are expandable (when collapsed)
+								</li>
+								<li>
+									Buttons don't have a clear cue signaling
+									they are collapsible (when expanded)
+								</li>
+								<li>
+									When expanded, the question button changes
+									color, however it is extremely similar to
+									the collapsed button color
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+				<br />
+				<div id="accessibility">
+					<h3>Accessibility</h3>
+					<p>
+						Not only is the Toronto Cupcake website poorly designed
+						in terms of
+						<strong style="color: #c22c5d">efficacy</strong>, but it
+						also raises concerns about
+						<strong style="color: #c22c5d">accessibility</strong>. I
+						used the
+						<a href="https://wave.webaim.org/">WebAIM WAVE</a> tool
+						to evaluate the accessibility of the FAQs page, and it
+						found
+						<strong style="color: #c22c5d"
+							>19 “very low contrast” errors</strong
+						>
+						in the dropdown and footer menus. The colors used for
+						these menus is a dark gray and medium pink, which is not
+						only an aesthetically poor choice in color scheme, but
+						the contrast between colors is also hard to distinguish,
+						especially for colorblind users. Luckily, the Toronto
+						Cupcake website provides a
+						<strong style="color: #c22c5d"
+							>high contrast mode</strong
+						>
+						that increases the contrast between colors on the page,
+						however the problem remains that the colors chosen are
+						not visually appealing, especially on high contrast mode
+						when the color scheme becomes somewhat inconsistent.
+					</p>
+					<p>
+						Here are some screenshots of the problematic components:
+					</p>
+					<div class="columns">
+						<div class="column">
+							<figure>
+								<img
+									src="./images/navbar_default.png"
+									style="width: 100px !important"
+								/>
+								<figcaption>
+									Dropdown nav menu with default colors
+								</figcaption>
+							</figure>
+						</div>
+						<div class="column">
+							<figure>
+								<img
+									src="./images/navbar_high_contrast.png"
+									style="width: 100px !important"
+								/>
+								<figcaption>
+									Dropdown nav menu on high contrast mode
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+					<div class="columns">
+						<div class="column">
+							<figure>
+								<img
+									src="./images/footer_default.png"
+									style="width: 600px !important"
+								/>
+								<figcaption>
+									Footer menu with default colors
+								</figcaption>
+							</figure>
+						</div>
+						<div class="column">
+							<figure>
+								<img
+									src="./images/footer_high_contrast.png"
+									style="width: 600px !important"
+								/>
+								<figcaption>
+									Footer menu on high contrast mode
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+
+		<div id="redesign">
+			<h2>Redesigning the Webpage</h2>
+			<div id="design-choices">
+				<h3>Design Choices</h3>
+				<p>
+					Main changes I made in my redesign (from the original
+					webpage) and their impact on usability include:
+				</p>
+				<ul>
+					<li>
+						<strong style="color: #c22c5d">Reformat FAQs</strong> in
+						a single column, grouped by section headings — allows
+						users to efficiently read straight down the page to find
+						what they are looking for
+					</li>
+					<li>
+						Added an
+						<strong style="color: #c22c5d"
+							>expandable carrot</strong
+						>
+						icon that flips when expanded/hidden — shows users that
+						there is a button that can be clicked to show hidden
+						information
+					</li>
+					<li>
+						<strong style="color: #c22c5d">Pinned navbar</strong> —
+						allows users to always have easy access the main
+						navigation tabs
+					</li>
+				</ul>
+				<br />
+				<p>
+					I also made the following adjustments to my redesign after
+					feedback from a peer
+					<strong style="color: #c22c5d">critique</strong>
+				</p>
+				<ul>
+					<li>Removed 'faqs' tab from navbar</li>
+					<li>
+						Removed 'about' tab from footer, switched order of
+						footer tabs
+					</li>
+				</ul>
+			</div>
+			<br />
+
+			<div id="mockups">
+				<h3>Mockups</h3>
+				<p>
+					To ensure consistency in my redesign, I first created a
+					<strong style="color: #c22c5d">visual style guide</strong>
+					including a color palette, typography, and reusable
+					interactive components.
+				</p>
+				<p>
+					Using this guide, I then made three mockup redesigns for the
+					Toronto Cupcake FAQs page: 1 each for mobile, tablet, and
+					desktop versions.
+				</p>
+
+				<div class="columns">
+					<div class="column mobile">
+						<h3>Mobile</h3>
+						<img src="./images/mockups/mobile.png" />
+					</div>
+					<div class="column tablet">
+						<h3>Tablet</h3>
+						<img src="./images/mockups/tablet.png" />
+					</div>
+					<div class="column desktop">
+						<h3>Desktop</h3>
+						<img src="./images/mockups/desktop.png" />
+					</div>
+				</div>
+				<p>
+					To view the full interactive versions of these mockups, as
+					well as annotations on the responsive layout elements, see
+					my full
+					<a
+						href="https://www.figma.com/design/XRfo3nyyMw3tAgaiOcmqAM/Toronto-Cupcakes-Redesign?node-id=0-1&t=mGHK0YGritq5a5xw-1"
+						>Figma project</a
+					>.
+				</p>
+			</div>
+			<br />
+
+			<h2>Final Redesign</h2>
+			<p>
+				Finally, I implemented these redesigned mockup pages using HTML
+				and CSS. My redesigned webpage is responsive to different screen
+				sizes, and you can view my interactive final redesigned FAQs
+				page
+				<a
+					href="https://catherineyu8.github.io/toronto-cupcake-redesign/"
+					>here</a
+				>.
+			</p>
+			<p>Preview:</p>
+			<div class="columns">
+				<div class="column">
+					<iframe
+						src="https://catherineyu8.github.io/toronto-cupcake-redesign/"
+						width="900px"
+						height="500px"
+					></iframe>
+				</div>
+			</div>
+		</div>
+		<br />
+
+		<div id="takeaways">
+			<h2>Takeaways</h2>
+
+			<p>
+				One of my biggest takeaways from redesigning the Toronto Cupcake
+				FAQs page was the importance of clear
+				<strong style="color: #c22c5d"
+					>organization and hierarchy</strong
+				>
+				in design. The original page's layout made it difficult to
+				navigate, so restructuring the FAQ content into a single-column
+				format with distinct section headings significantly improved
+				readability.
+			</p>
+			<p>
+				Additionally, I learned to both create
+				<strong style="color: #c22c5d"
+					>responsive, reusable components</strong
+				>
+				in Figma, and implement these using HTML and CSS. Designing the
+				components that automatically adapted formatting across
+				different screen sizes largely improved the reusability of my
+				design, allowing me to spend less time formatting for individual
+				screens.
+			</p>
+			<p>
+				Overall, this redesign project gave me insight into the process
+				of analyzing website usability and redesigning webpages to
+				better enhance functionality and user experience.
+			</p>
+		</div>
+	</body>
+</html>

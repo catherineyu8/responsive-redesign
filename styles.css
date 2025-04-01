@@ -1,0 +1,92 @@
+/* global styles */
+body {
+	font-family: "Trebuchet MS", sans-serif;
+	color: #c22c5d;
+	padding: 120px;
+}
+
+/* typography */
+.title {
+	text-align: center;
+}
+h1 {
+	font-size: 48px;
+}
+h2 {
+	font-size: 32px;
+}
+h3 {
+	font-size: 24px;
+}
+
+p,
+li {
+	color: black;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+/* indent h3 level headings and main text */
+h3,
+p {
+	padding: 0px 25px; /* 0 vertical padding, add horizontal padding */
+}
+/* table formatting */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #fff0f5;
+	table-layout: fixed;
+}
+th,
+td {
+	border: 1px solid #c22c5d;
+}
+th {
+	padding: 10px;
+	background-color: #ffe1eb;
+	font-size: 24px;
+}
+
+.quicklinks .column {
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+/* display things in columns */
+.columns {
+	display: flex; /* arrange elements in a single row (ie as columns) */
+	justify-content: center; /* center them L/R */
+	gap: 10px; /* Adds space between columns */
+	width: 100%; /* Ensure the container spans the full width */
+}
+.column {
+	text-align: center; /* Center the text and images */
+	padding: 10px;
+}
+.column .desktop {
+	flex: 2;
+}
+.column .tablet {
+	flex: 1.5;
+}
+.column .mobile {
+	flex: 1;
+}
+.column img {
+	width: 100%; /* Ensure images are constrained to the column width */
+	height: auto; /* Maintain aspect ratio */
+	max-width: 100%; /* Prevent images from exceeding their original size */
+	border: 1px solid #c22c5d;
+}
+
+/* links */
+/* a {
+	color: #007bff;
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+}
+a:hover {
+	color: #0056b3;
+	text-decoration: underline;
+} */
